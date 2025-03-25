@@ -1,0 +1,16 @@
+<div class="overlay" *ngIf="isVisible">
+    <div class="match-found-container" [@circlePulse]>
+      <div class="circle glow-pulse">
+        <div class="inner-content">
+          <img src="https://i.imgur.com/YOUR_LOGO_URL_HERE.png" alt="League Logo" class="logo" />
+          <h2>Match Found</h2>
+          <p>Co-op vs AI</p>
+          <p>Accept by: {{ timer }}</p>
+        </div>
+      </div>
+      <div class="buttons">
+        <button class="accept-btn" (click)="acceptMatch()">ACCEPT</button>
+        <button class="decline-btn" (click)="declineMatch()">DECLINE</button>
+      </div>
+    </div>
+  </div>
