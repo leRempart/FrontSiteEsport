@@ -1,0 +1,81 @@
+.teams-container {
+  background: linear-gradient(180deg, #0a192f, #1a2a44);
+  padding: 2rem;
+  min-height: 100vh;
+}
+
+.title {
+  color: #c8aa6e;
+  font-family: 'Beaufort for LOL', serif; // Police officielle de LoL si disponible
+  text-align: center;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 0 0 10px rgba(200, 170, 110, 0.5);
+}
+
+.teams-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.team-card {
+  background: #1a2a44;
+  border: 1px solid #c8aa6e;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+}
+
+.team-header {
+  border-bottom: 1px solid rgba(200, 170, 110, 0.3);
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+}
+
+.team-name {
+  color: #f0e6d2;
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.game-label {
+  color: #78859e;
+  font-size: 0.9rem;
+}
+
+.players-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.player {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.player-icon {
+  width: 24px;
+  height: 24px;
+  background: #c8aa6e;
+  border-radius: 50%;
+}
+
+.player-name {
+  color: #f0e6d2;
+  font-weight: 500;
+}
+
+.player-id {
+  color: #78859e;
+  font-size: 0.8rem;
+}

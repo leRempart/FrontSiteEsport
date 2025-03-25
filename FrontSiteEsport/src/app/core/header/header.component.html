@@ -1,25 +1,25 @@
 <mat-toolbar class="header">
     <!-- Côté League of Legends -->
-    <div class="side lol-side">
-      <img src="assets/lol.png" alt="League of Legends Logo" class="game-logo">
+    <div class="side lol-side" (click)="GoToLol()">
+      <img src="assets/lol.png" alt="League of Legends Logo" class="game-logo" >
     </div>
-  
+
     <!-- Logo central (votre logo personnalisé) -->
     <div class="center-logo">
       <img src="assets/logobde.png" alt="Custom Logo" class="custom-logo">
     </div>
-  
+
     <!-- Côté Valorant -->
     <div class="side valorant-side">
       <img src="assets/valo.png" alt="Valorant Logo" class="game-logo">
     </div>
-  
+
     <!-- Bouton menu pour mobile -->
     <button mat-icon-button class="menu-button" (click)="toggleMenu()" *ngIf="isMobile">
       <mat-icon>menu</mat-icon>
     </button>
   </mat-toolbar>
-  
+
   <!-- Menu mobile (optionnel) -->
   <div class="mobile-menu" *ngIf="isMobile && menuOpen">
     <a routerLink="/">Accueil</a>

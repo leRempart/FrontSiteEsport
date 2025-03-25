@@ -7,7 +7,6 @@ import { CoreRoutingModule } from './core-routing.module';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { LandingComponent } from './landing/landing.component';
-import { MatchFoundComponent } from './match-found/match-found.component';
 
 
 @NgModule({
@@ -15,7 +14,6 @@ import { MatchFoundComponent } from './match-found/match-found.component';
     HeaderComponent,
     FooterComponent,
     LandingComponent,
-    MatchFoundComponent,
 
   ],
   imports: [

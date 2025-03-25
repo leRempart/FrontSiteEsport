@@ -1,0 +1,20 @@
+<div class="teams-container">
+  <h1 class="title">Team Roster</h1>
+
+  <div class="teams-grid">
+    <div class="team-card" *ngFor="let team of teams">
+      <div class="team-header">
+        <h2 class="team-name">{{team.name}}</h2>
+        <span class="game-label">{{team.gameLabel}}</span>
+      </div>
+
+      <div class="players-list">
+        <div class="player" *ngFor="let player of team.players">
+          <span class="player-icon"></span>
+          <span class="player-name">{{player.gameName}}</span>
+          <span class="player-id">#{{player.puuid.substring(0,4)}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

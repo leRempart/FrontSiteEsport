@@ -1,11 +1,17 @@
-import { Component, HostListener } from '@angular/core';
+import {Component, HostListener, OnInit} from '@angular/core';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit{
+  constructor(private router : Router) {
+  }
+  ngOnInit() {
+  }
+
   isMobile: boolean = window.innerWidth < 768; // Détection initiale
   menuOpen: boolean = false;
 
@@ -16,5 +22,8 @@ export class HeaderComponent {
 
   toggleMenu() {
     this.menuOpen = !this.menuOpen;
+  }
+  GoToLol(){
+    this.router.navigateByUrl("/league-of-legends")
   }
 }
