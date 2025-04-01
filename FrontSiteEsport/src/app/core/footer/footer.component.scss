@@ -1,0 +1,83 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background: linear-gradient(90deg, #1a2a6c, #b21f1f); // Gradient bleu-rouge du header
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3); // Ombre vers le haut
+  color: #fff;
+  min-height: 80px;
+}
+
+.footer-links {
+  display: flex;
+  gap: 20px;
+
+  a {
+    color: #f0e6d2; // Couleur douce inspirée de LoL
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s;
+
+    &:hover {
+      color: #c8aa6e; // Or LoL pour le hover
+    }
+  }
+}
+
+.left-links {
+  justify-content: flex-start;
+}
+
+.right-links {
+  justify-content: flex-end;
+}
+
+.footer-center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+
+  .footer-logo {
+    height: 60px;
+    width: auto;
+  }
+}
+
+// Responsive
+@media (max-width: 768px) {
+  .footer {
+    flex-direction: column;
+    padding: 15px 20px;
+    gap: 15px;
+  }
+
+  .footer-center {
+    position: static;
+    transform: none;
+
+    .footer-logo {
+      height: 40px;
+    }
+  }
+
+  .footer-links {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 10px 15px;
+  }
+
+  .footer-logo {
+    height: 30px;
+  }
+
+  .footer-links a {
+    font-size: 0.9rem;
+  }
+}

@@ -1,0 +1,58 @@
+<div class="player-list">
+    <div class="player" *ngFor="let player of team.players">
+      <div class="player-card">
+        <div class="player-header">
+          <span class="player-icon"></span>
+          <div class="player-basic-info">
+            <span class="player-name">{{ player.gameName }}</span>
+            <span class="player-id">#{{ player.tagline }}</span>
+            <span class="player-level">Niveau {{ player.summonerLevel }}</span>
+            
+            <div class="player-ranks" *ngIf="player.ranks.length > 0">
+              <div class="rank" *ngFor="let rank of player.ranks">
+                <img [src]="'assets/ranks/' + rank.tier.toLowerCase() + '.jpg'" class="rank-emblem" alt="{{ rank.tier }}">
+                <div class="rank-info">
+                  <span class="rank-type">{{ rank.queueType }}</span>
+                  <span class="rank-details">{{ rank.tier }} {{ rank.rank }} ({{ rank.leaguePoints }} LP)</span>
+                  <span class="rank-stats">{{ rank.wins }}V / {{ rank.losses }}D</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <button class="toggle-summary" [class.expanded]="player.showSummary" (click)="player.showSummary = !player.showSummary">
+            <i class="arrow-icon"></i>
+          </button>
+        </div>
+        
+        <div class="player-summary" *ngIf="player.showSummary && player.matchesSummary">
+          <div class="summary-stats">
+            <div class="stats-header">Statistiques</div>
+            <div class="stats-content">
+              <span>Total : {{ player.matchesSummary.games }} matchs</span>
+              <span>{{ player.matchesSummary.wins }}V / {{ player.matchesSummary.defeats }}D ({{ player.matchesSummary.winrate * 100 | number:'1.0-0' }}%)</span>
+              <span>KDA : {{ player.matchesSummary.kills }} / {{ player.matchesSummary.deaths }} / {{ player.matchesSummary.assists }} ({{ player.matchesSummary.kda | number:'1.2-2' }})</span>
+            </div>
+          </div>
+          
+          <div class="champions-list" *ngIf="player.matchesSummary.champions.length > 0">
+            <div class="champions-header">Champions joués</div>
+            <div class="champions-content">
+              <div class="champion" *ngFor="let champ of player.matchesSummary.champions">
+                <img [src]="champ.image" alt="{{ champ.name }}" class="champion-icon">
+                <div class="champion-details">
+                  <span class="champion-name">{{ champ.name }}</span>
+                  <span class="champion-stats">{{ champ.games }} matchs ({{ champ.wins }}V / {{ champ.defeats }}D - {{ champ.winrate * 100 | number:'1.0-0' }}%)</span>
+                  <span class="champion-kda">KDA : {{ champ.kills }} / {{ champ.deaths }} / {{ champ.assists }} ({{ champ.kda | number:'1.2-2' }})</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="no-summary" *ngIf="player.showSummary && !player.matchesSummary">
+          Aucun résumé de matchs disponible
+        </div>
+      </div>
+    </div>
+  </div>
